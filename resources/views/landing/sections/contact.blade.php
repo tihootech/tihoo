@@ -10,12 +10,13 @@
                     <ul>
                         <li>
                             <i aria-hidden="true" class="fas fa-map-marker-alt"></i>
-                            123 Park Avenue, New York, United States
+                            {{$website->address}}
                         </li>
                         <li>
                             <i aria-hidden="true" class="fas fa-phone-volume"></i>
-                            <a href="tel:09185567663"> 0918 556 7663 </a>
-                            <a href="tel:09387290336"> 0938 729 0336 </a>
+                            @foreach (explode(',', $website->phones) as $phone)
+                                <a href="tel:{{$phone}}"> {{prettyPhone($phone)}} </a>
+                            @endforeach
                         </li>
                     </ul>
                 </div>

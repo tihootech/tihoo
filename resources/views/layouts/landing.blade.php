@@ -55,7 +55,6 @@
     <script src="vendor/js/owl.carousel.min.js"></script>
     <!-- CUSTOM JS -->
     <script src="vendor/js/jquery.pagepiling.min.js"></script>
-    <script src="vendor/js/contact_us.js"></script>
     <script src="vendor/js/script.js"></script>
 </body>
 </html>

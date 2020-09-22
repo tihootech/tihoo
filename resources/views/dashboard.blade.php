@@ -1,15 +1,42 @@
-<x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Dashboard') }}
-        </h2>
-    </x-slot>
+@extends('layouts.dash')
 
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                <x-jet-welcome />
+@section('content')
+
+    <div class="card main-card">
+        <div class="card-header">
+            <h2 class="main-color"> مدیریت وبسایت </h2>
+        </div>
+        <div class="card-body">
+            <form class="row" action="{{route('website.update')}}" method="post" id="website-form">
+
+                @csrf
+                @method('PUT')
+
+                <div class="form-group col-md-5">
+                    <label for="banner_title"> banner_title </label>
+                    <textarea name="banner_title" id="banner_title" rows="2" class="form-control">{{$website->banner_title}}</textarea>
+                </div>
+                <div class="form-group col-md-7">
+                    <label for="banner_title"> address </label>
+                    <textarea name="address" id="address" rows="2" class="form-control">{{$website->address}}</textarea>
+                </div>
+                <div class="form-group col-md-9">
+                    <label for="banner_info"> banner_info </label>
+                    <textarea name="banner_info" id="banner_info" rows="4" class="form-control">{{$website->banner_info}}</textarea>
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="phones"> phones </label>
+                    <textarea name="phones" id="phones" rows="4" class="form-control">{{commoTonewLine($website->phones)}}</textarea>
+                </div>
+
+            </form>
+        </div>
+        <div class="card-footer">
+            <div class="col-md-2 mx-auto">
+                <button type="submit" form="website-form" class="btn btn-danger btn-block"> Submit </button>
             </div>
         </div>
     </div>
-</x-app-layout>
+
+
+@endsection

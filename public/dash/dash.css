@@ -1,0 +1,15 @@
+@font-face {
+    font-family: 'Dirooz';
+    src: url(../vendor/fonts/Dirooz.ttf);
+}
+
+body {
+    font-family: 'Dirooz';
+    background-color: #ddd;
+    padding: 20px;
+    direction: rtl;
+    text-align: right;
+}
+
+.main-color { color : #dc3545 }
+.main-bg { background-color: #dc3545 }

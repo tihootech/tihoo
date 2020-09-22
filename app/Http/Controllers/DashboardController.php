@@ -8,11 +8,11 @@ use App\Models\Member;
 use App\Models\Message;
 use App\Models\Product;
 
-class LandingController extends Controller
+class DashboardController extends Controller
 {
-    public function index()
+    public function home()
     {
         $website = Website::first();
-        return view('landing.index', compact('website'));
+        return view('dashboard', compact('website'));
     }
 }

@@ -6,12 +6,10 @@
             <div class="row align-items-center">
                 <div class="col-12 col-md-6">
                     <h1 class="main-font font-weight-bold text-grey content1 wow" data-wow-delay=".4s">
-                        تیهوتک <span class="d-block main-color"> با تیهوتک، بهتر و حرفه‌ای تر دیده شوید! </span>
+                        تیهوتک <span class="d-block main-color"> {{$website->banner_title}} </span>
                     </h1>
                     <p class="text-grey my-3 content1 wow" data-wow-delay=".6s">
-                        توضیحات توضیحات توضیحات توضیحات توضیحات توضیحات توضیحات توضیحات توضیحات توضیحات توضیحات توضیحات توضیحات توضیحات
-                        توضیحات توضیحات توضیحات توضیحات توضیحات توضیحات توضیحات توضیحات توضیحات توضیحات توضیحات توضیحات توضیحات توضیحات
-                        توضیحات توضیحات توضیحات توضیحات توضیحات توضیحات توضیحات توضیحات توضیحات توضیحات توضیحات توضیحات توضیحات توضیحات
+                        {{$website->banner_info}}
                     </p>
                     <a  href="#all-products" class="btn btn-medium btn-rounded btn-trans mt-3 mb-5 mb-md-0 content1 wow" data-wow-delay=".8s"> مشاهده نمونه کار ها </a>
                 </div>

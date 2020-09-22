@@ -19,7 +19,7 @@
         <div class="side_nav">
             <div class="my-sticky-nav">
                 <div class="side_menu text-center">
-                    <a class="brand-logo link" href="index-product-hotspot.html">
+                    <a class="brand-logo link" href="{{route('login')}}">
                         <img src="images/logo-white.svg" alt="logo" width="150px" height="150px"/>
                     </a>
                     <div id="my_tog" class="my_tog link" onmouseover="my_click();">
