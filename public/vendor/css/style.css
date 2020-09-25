@@ -56,7 +56,7 @@ a {color:inherit;text-decoration: none; direction: rtl;}
 .rev_slider_wrapper{width: 100% !important;}
 .btn.focus, .btn:focus{-webkit-box-shadow: none;box-shadow: none;}
 p {direction: rtl;}
-p:last-child{margin-bottom: 0 !important; font-family: 'Roboto', sans-serif;}
+p:last-child{margin-bottom: 0 !important; font-family: 'Dirooz', sans-serif;}
 .fa, .far, .fas{display: inline;}
 a:active, a:hover{color: #ed2d34;}
 li{list-style: none;text-decoration: none;}
@@ -1375,11 +1375,11 @@ section{padding: 0;}
 
 .paragraph {
     font-weight: 200;
-    font-family: 'Roboto', sans-serif;
     font-size: 18px;
 }
 
 .testimonial-tittle h3 {
+    font-family: 'Dirooz';
     font-size: 20px;
     font-weight: normal;
 }
