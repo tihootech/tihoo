@@ -10,78 +10,21 @@
         <!-- Products -->
         <div class="row products-fade wow" data-wow-delay=".8s">
             <div class="owl-products owl-carousel owl-theme wow fadeInUp">
-                <!--Item 1-->
-                <div class="team-box item">
-                    <!--Product Image-->
-                    <div class="team-image">
-                        <img src="images/ports/talar-min.png" alt="talar">
+
+                @foreach ($products as $product)
+                    <div class="team-box item">
+                        <div class="team-image">
+                            <img src="{{asset($product->image)}}" alt="{{$product->title}}">
+                        </div>
+                        <div class="team-text">
+                            <h5 class="main-font">{{$product->title}}</h5>
+                            <a onclick="morphic_window('morphic-window-{{$product->id}}');" class="btn btn-medium btn-rounded btn-trans text-capitalize mt-3 mb-5 mb-md-0">
+                                مشاهده جزییات
+                            </a>
+                        </div>
                     </div>
-                    <!--Product Text-->
-                    <div class="team-text">
-                        <h5 class="main-font">پروژه سلام تالار</h5>
-                        <a onclick="morphic_window('morphic-window6');" class="btn btn-medium btn-rounded btn-trans text-capitalize mt-3 mb-5 mb-md-0"> مشاهده جزییات </a>
-                    </div>
-                </div>
-                <!--Item 2-->
-                <div class="team-box item">
-                    <!--Product Image-->
-                    <div class="team-image">
-                        <img src="images/ports/behzisti-min.png" alt="behzisti">
-                    </div>
-                    <!--Product Text-->
-                    <div class="team-text">
-                        <h5 class="main-font">اتوماسیون کاریابی بهزیستی</h5>
-                        <a onclick="morphic_window('morphic-window2');" class="btn btn-medium btn-rounded btn-trans text-capitalize mt-3 mb-5 mb-md-0"> مشاهده جزییات </a>
-                    </div>
-                </div>
-                <!--Item 3-->
-                <div class="team-box item">
-                    <!--Product Image-->
-                    <div class="team-image">
-                        <img src="images/ports/ericke-min.png" alt="ericke">
-                    </div>
-                    <!--Product Text-->
-                    <div class="team-text">
-                        <h5 class="main-font">اریکه گیلانیان</h5>
-                        <a onclick="morphic_window('morphic-window3');" class="btn btn-medium btn-rounded btn-trans text-capitalize mt-3 mb-5 mb-md-0"> مشاهده جزییات </a>
-                    </div>
-                </div>
-                <!--Item 4-->
-                <div class="team-box item">
-                    <!--Product Image-->
-                    <div class="team-image">
-                        <img src="images/ports/eylay-min.png" alt="eylay">
-                    </div>
-                    <!--Product Text-->
-                    <div class="team-text">
-                        <h5 class="main-font">وبسایت آموزشی Eylay</h5>
-                        <a onclick="morphic_window('morphic-window4');" class="btn btn-medium btn-rounded btn-trans text-capitalize mt-3 mb-5 mb-md-0"> مشاهده جزییات </a>
-                    </div>
-                </div>
-                <!--Item 5-->
-                <div class="team-box item">
-                    <!--Product Image-->
-                    <div class="team-image">
-                        <img src="images/ports/respina-min.png" alt="respina">
-                    </div>
-                    <!--Product Text-->
-                    <div class="team-text">
-                        <h5 class="main-font"> هتل رسپینا لاهیجان </h5>
-                        <a onclick="morphic_window('morphic-window5');" class="btn btn-medium btn-rounded btn-trans text-capitalize mt-3 mb-5 mb-md-0"> مشاهده جزییات </a>
-                    </div>
-                </div>
-                <!--Item 6-->
-                <div class="team-box item">
-                    <!--Product Image-->
-                    <div class="team-image">
-                        <img src="images/ports/atras-min.png" alt="atras">
-                    </div>
-                    <!--Product Text-->
-                    <div class="team-text">
-                        <h5 class="main-font">گروه آتراس</h5>
-                        <a onclick="morphic_window('morphic-window1');" class="btn btn-medium btn-rounded btn-trans text-capitalize mt-3 mb-5 mb-md-0"> مشاهده جزییات </a>
-                    </div>
-                </div>
+                @endforeach
+
             </div>
         </div>
         <!--Owl Nav-->
@@ -90,3 +33,46 @@
     </div>
 </section>
 <!-- END ALL PRODUCTS -->
+
+
+<div id="data-modal">
+
+    @foreach ($products as $product)
+        <div class="modal-window" id="morphic-window-{{$product->id}}">
+            <div class="modal-body">
+                <header>
+                    <span class="close-modal"><i></i><i></i></span>
+                </header>
+                <div class="morphic-body">
+                    <div class="container">
+                        <div class="row main-morphic-body align-items-center">
+                            <div class="morphic-img col-12 col-md-6">
+                                <!-- Main Image -->
+                                <div id="carousel-thumb" class="carousel slide carousel-fade carousel-thumbnails" data-ride="carousel">
+                                    <!--Slides-->
+                                    <div class="carousel-inner" role="listbox">
+                                        <div class="carousel-item active">
+                                            <img class="d-block w-100" src="{{asset($product->image)}}" alt="{{$product->title}}">
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--/.Carousel Wrapper-->
+                            </div>
+                            <div class="morphic-title col-12 col-md-6">
+                                <h5 class="mb-3">طراحی شده توسط مجموعه تیهوتک</h5>
+                                <h3>{{$product->title}}</h3>
+                                <p>{{$product->info}}</p>
+
+                                <a target="_blank" href="{{$product->link}}" class="btn btn-medium btn-rounded btn-trans text-capitalize">
+                                    مشاهده وبسایت
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    @endforeach
+
+</div>

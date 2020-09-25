@@ -13,6 +13,8 @@ class LandingController extends Controller
     public function index()
     {
         $website = Website::first();
-        return view('landing.index', compact('website'));
+        $products = Product::latest()->get();
+        $members = Member::all();
+        return view('landing.index', compact('website', 'products', 'members'));
     }
 }

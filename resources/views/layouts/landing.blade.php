@@ -11,7 +11,7 @@
     <!-- Page Title -->
     <title> TihooTech | تیهوتک </title>
     <!-- Favicon -->
-    <link href="images/favicon.ico" rel="icon">
+    <link href="images/favicon.svg" rel="icon">
     <!-- Bundle -->
     <link rel="stylesheet" href="vendor/css/bundle.min.css">
     <!-- Plugin Css -->

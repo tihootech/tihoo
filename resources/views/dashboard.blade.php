@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <div class="card main-card">
+    <div class="card mb-3">
         <div class="card-header">
             <h2 class="main-color"> مدیریت وبسایت </h2>
         </div>
@@ -33,7 +33,34 @@
         </div>
         <div class="card-footer">
             <div class="col-md-2 mx-auto">
-                <button type="submit" form="website-form" class="btn btn-danger btn-block"> Submit </button>
+                <button type="submit" form="website-form" class="btn btn-danger btn-block"> تایید </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="card mb-3">
+        <div class="card-header">
+            <h2 class="main-color"> نمونه کارها </h2>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                @foreach ($products as $product)
+                    <form class="col-md-4" action="{{route('product.update', $product)}}" method="post" enctype="multipart/form-data">
+                        @csrf
+                        @method('PUT')
+                        @include('includes.product_form')
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-info"> ویرایش </button>
+                        </div>
+                    </form>
+                @endforeach
+                <form class="col-md-4" action="{{route('product.store')}}" method="post" enctype="multipart/form-data">
+                    @csrf
+                    @include('includes.product_form', ['product' => null])
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-danger"> اضافه کردن </button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>

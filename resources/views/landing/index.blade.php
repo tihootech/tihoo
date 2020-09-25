@@ -10,5 +10,4 @@
 
     </div>
 
-    @include('landing.sections.modals')
 @endsection

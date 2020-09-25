@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
     <title> Dashboard </title>
-    <link href="images/favicon.ico" rel="icon">
+    <link href="{{asset('images/favicon.svg')}}" rel="icon">
 
     <!-- CSS only -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
@@ -41,7 +41,7 @@
                 title: 'Oops...',
                 confirmButtonColor: '#dc3545',
                 text: '{{session('error')}}',
-            })
+            });
         </script>
     @endif
 

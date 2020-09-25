@@ -13,6 +13,7 @@ class DashboardController extends Controller
     public function home()
     {
         $website = Website::first();
-        return view('dashboard', compact('website'));
+        $products = Product::latest()->get();
+        return view('dashboard', compact('website', 'products'));
     }
 }
