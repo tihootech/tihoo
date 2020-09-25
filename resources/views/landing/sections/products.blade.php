@@ -35,44 +35,46 @@
 <!-- END ALL PRODUCTS -->
 
 
-<div id="data-modal">
+@section('modals')
+    <div id="data-modal">
 
-    @foreach ($products as $product)
-        <div class="modal-window" id="morphic-window-{{$product->id}}">
-            <div class="modal-body">
-                <header>
-                    <span class="close-modal"><i></i><i></i></span>
-                </header>
-                <div class="morphic-body">
-                    <div class="container">
-                        <div class="row main-morphic-body align-items-center">
-                            <div class="morphic-img col-12 col-md-6">
-                                <!-- Main Image -->
-                                <div id="carousel-thumb" class="carousel slide carousel-fade carousel-thumbnails" data-ride="carousel">
-                                    <!--Slides-->
-                                    <div class="carousel-inner" role="listbox">
-                                        <div class="carousel-item active">
-                                            <img class="d-block w-100" src="{{asset($product->image)}}" alt="{{$product->title}}">
+        @foreach ($products as $product)
+            <div class="modal-window" id="morphic-window-{{$product->id}}">
+                <div class="modal-body">
+                    <header>
+                        <span class="close-modal"><i></i><i></i></span>
+                    </header>
+                    <div class="morphic-body">
+                        <div class="container">
+                            <div class="row main-morphic-body align-items-center">
+                                <div class="morphic-img col-12 col-md-6">
+                                    <!-- Main Image -->
+                                    <div id="carousel-thumb" class="carousel slide carousel-fade carousel-thumbnails" data-ride="carousel">
+                                        <!--Slides-->
+                                        <div class="carousel-inner" role="listbox">
+                                            <div class="carousel-item active">
+                                                <img class="d-block w-100" src="{{asset($product->image)}}" alt="{{$product->title}}">
+                                            </div>
                                         </div>
                                     </div>
+                                    <!--/.Carousel Wrapper-->
                                 </div>
-                                <!--/.Carousel Wrapper-->
-                            </div>
-                            <div class="morphic-title col-12 col-md-6">
-                                <h5 class="mb-3">طراحی شده توسط مجموعه تیهوتک</h5>
-                                <h3>{{$product->title}}</h3>
-                                <p>{{$product->info}}</p>
+                                <div class="morphic-title col-12 col-md-6">
+                                    <h5 class="mb-3">طراحی شده توسط مجموعه تیهوتک</h5>
+                                    <h3>{{$product->title}}</h3>
+                                    <p>{{$product->info}}</p>
 
-                                <a target="_blank" href="{{$product->link}}" class="btn btn-medium btn-rounded btn-trans text-capitalize">
-                                    مشاهده وبسایت
-                                </a>
+                                    <a target="_blank" href="{{$product->link}}" class="btn btn-medium btn-rounded btn-trans text-capitalize">
+                                        مشاهده وبسایت
+                                    </a>
+                                </div>
                             </div>
+
                         </div>
-
                     </div>
                 </div>
             </div>
-        </div>
-    @endforeach
+        @endforeach
 
-</div>
+    </div>
+@endsection

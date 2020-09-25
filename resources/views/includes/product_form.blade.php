@@ -8,7 +8,7 @@
     <div class="col-md-6">
         <div class="form-group">
             <label for="new-image"> image </label>
-            <input type="file" name="image" id="new-image" class="form-control" required>
+            <input type="file" name="image" id="new-image" class="form-control" @unless($product) required @endunless>
         </div>
     </div>
     <div class="col-md-6">

@@ -45,18 +45,59 @@
         <div class="card-body">
             <div class="row">
                 @foreach ($products as $product)
-                    <form class="col-md-4" action="{{route('product.update', $product)}}" method="post" enctype="multipart/form-data">
-                        @csrf
-                        @method('PUT')
-                        @include('includes.product_form')
+                    <div class="col-md-4">
+                        <form action="{{route('product.update', $product)}}" method="post" enctype="multipart/form-data" id="update-{{$product->id}}">
+                            @csrf
+                            @method('PUT')
+                            @include('includes.product_form')
+                        </form>
+                        <form class="d-none" action="{{route('product.destroy', $product)}}" method="post" id="delete-{{$product->id}}">
+                            @csrf
+                            @method('DELETE')
+                        </form>
                         <div class="text-center">
-                            <button type="submit" class="btn btn-info"> ویرایش </button>
+                            <button type="submit" form="update-{{$product->id}}" class="btn btn-info"> ویرایش </button>
+                            <button type="button" data-target="delete-{{$product->id}}" class="btn btn-warning delete"> حذف </button>
                         </div>
-                    </form>
+                    </div>
                 @endforeach
                 <form class="col-md-4" action="{{route('product.store')}}" method="post" enctype="multipart/form-data">
                     @csrf
                     @include('includes.product_form', ['product' => null])
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-danger"> اضافه کردن </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="card mb-3">
+        <div class="card-header">
+            <h2 class="main-color"> اعضای تیم </h2>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                @foreach ($members as $member)
+                    <div class="col-md-4">
+                        <form action="{{route('member.update', $member)}}" method="post" enctype="multipart/form-data" id="update-{{$member->id}}">
+                            @csrf
+                            @method('PUT')
+                            @include('includes.member_form')
+                        </form>
+                        <form class="d-none" action="{{route('member.destroy', $member)}}" method="post" id="delete-{{$member->id}}">
+                            @csrf
+                            @method('DELETE')
+                        </form>
+                        <div class="text-center">
+                            <button type="submit" form="update-{{$member->id}}" class="btn btn-info"> ویرایش </button>
+                            <button type="button" data-target="delete-{{$member->id}}" class="btn btn-warning delete"> حذف </button>
+                        </div>
+                    </div>
+                @endforeach
+                <form class="col-md-4" action="{{route('member.store')}}" method="post" enctype="multipart/form-data">
+                    @csrf
+                    @include('includes.member_form', ['member' => null])
                     <div class="text-center">
                         <button type="submit" class="btn btn-danger"> اضافه کردن </button>
                     </div>

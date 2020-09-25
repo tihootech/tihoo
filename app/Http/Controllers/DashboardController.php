@@ -14,6 +14,8 @@ class DashboardController extends Controller
     {
         $website = Website::first();
         $products = Product::latest()->get();
-        return view('dashboard', compact('website', 'products'));
+        $members = Member::all();
+        $messages = Message::latest()->get();
+        return view('dashboard', compact('website', 'products', 'members', 'messages'));
     }
 }
