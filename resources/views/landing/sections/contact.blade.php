@@ -33,12 +33,12 @@
                 </div>
             </div>
             <div class="col-12 col-lg-5 offset-lg-1 section4left wow text-center text-lg-left d-flex align-items-center" data-wow-delay=".8s">
-                <form class="row contact-form wow fadeInLeft" id="contact-form-data" dir="rtl">
+                <form class="row contact-form wow fadeInLeft" id="contact-form-data" dir="rtl" action="{{route('message.store')}}">
                     <div class="col-12 col-lg-12" id="result"></div>
                     <div class="col-12 col-lg-12">
                         <input type="text" name="name" placeholder="نام شما" class="form-control" required>
                         <input type="text" name="subject" placeholder="موضوع" class="form-control" required>
-                        <input type="email" name="phone" placeholder="شماره تماس" class="form-control" required>
+                        <input type="text" name="phone" placeholder="شماره تماس" class="form-control" required>
                         <textarea class="form-control" name="info" rows="6" placeholder="توضیحات (اختیاری)"></textarea>
                         <button type="submit" class="btn btn-medium btn-rounded btn-red rounded-pill w-100 contact_btn main-font">
                             تایید و ارسال

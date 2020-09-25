@@ -106,5 +106,43 @@
         </div>
     </div>
 
+    <div class="card mb-3">
+        <div class="card-header">
+            <h2 class="main-color"> پیغام ها </h2>
+        </div>
+        <div class="card-body">
+            <table class="table table-responsive-lg table-bordered table-hover table-striped">
+                <thead>
+                    <tr>
+                        <th> # </th>
+                        <th> name </th>
+                        <th> subject </th>
+                        <th> phone </th>
+                        <th> info </th>
+                        <th> action </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($messages as $i => $message)
+                        <tr>
+                            <th> {{$i+1}} </th>
+                            <td> {{$message->name ?? '-'}} </td>
+                            <td> {{$message->subject ?? '-'}} </td>
+                            <td> {{$message->phone ?? '-'}} </td>
+                            <td> {{$message->info ?? '-'}} </td>
+                            <td>
+                                <form class="d-none" id="delete-message-{{$message->id}}" action="{{route('message.destroy', $message)}}" method="post">
+                                    @csrf
+                                    @method('DELETE')
+                                </form>
+                                <button type="button" data-target="delete-message-{{$message->id}}" class="delete btn btn-warning btn-sm"> حذف </button>
+                            </td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
+    </div>
+
 
 @endsection

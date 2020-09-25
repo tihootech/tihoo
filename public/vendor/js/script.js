@@ -491,3 +491,60 @@ $(document).ready(function() {
         $(this).css('opacity','1');
     });
 });
+
+
+/*===================================
+         Contact Us AJAX
+ ======================================*/
+
+ function swalError() {
+     Swal.fire({
+         icon: 'error',
+         title: 'خطا...',
+         confirmButtonColor: '#dc3545',
+         text: 'ارسال پیام با خطا مواجه شد.',
+     });
+ }
+
+ function swalSuccess() {
+     Swal.fire({
+         position: 'center',
+         icon: 'success',
+         title: 'پیغام شما ارسال شد.',
+         showConfirmButton: false,
+         timer: 2000
+     });
+ }
+
+$(document).on('submit', '#contact-form-data', function (e) {
+    e.preventDefault();
+    var data = {
+        name : $('[name=name]').val(),
+        subject : $('[name=subject]').val(),
+        phone : $('[name=phone]').val(),
+        info : $('[name=info]').val(),
+    };
+    var url = $(this).attr('action');
+    $.ajaxSetup({
+		headers: {
+			'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+		}
+	});
+	$.ajax({
+		type:'POST',
+		url:url,
+		data:data,
+        error : swalError,
+		success:function(result){
+			if (result.code == 200) {
+                swalSuccess();
+                $('[name=name]').val(null);
+                $('[name=subject]').val(null);
+                $('[name=phone]').val(null);
+                $('[name=info]').val(null);
+            }else {
+                swalError();
+            }
+		}
+	});
+});

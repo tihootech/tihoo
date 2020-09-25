@@ -7,6 +7,11 @@ use App\Models\Website;
 
 class WebsiteController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     public function Update(Request $request)
     {
         $website = Website::first();

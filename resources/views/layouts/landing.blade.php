@@ -6,6 +6,7 @@
     <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
     <!-- Author -->
     <meta name="author" content="Ali Seyfi">
+    <meta name="csrf-token" content="{{csrf_token()}}">
     <!-- Description -->
     <meta name="description" content="توضیحات توضیحات توضیحات توضیحات توضیحات توضیحات توضیحات توضیحات توضیحات توضیحات توضیحات توضیحات توضیحات توضیحات توضیحات توضیحات توضیحات توضیحات توضیحات توضیحات توضیحات توضیحات توضیحات توضیحات توضیحات توضیحات .">
     <!-- Page Title -->
@@ -53,8 +54,9 @@
     <script src="vendor/js/jquery.appear.js"></script>
     <script src="vendor/js/jquery.fancybox.min.js"></script>
     <script src="vendor/js/owl.carousel.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <!-- CUSTOM JS -->
     <script src="vendor/js/jquery.pagepiling.min.js"></script>
-    <script src="vendor/js/script.js"></script>
+    <script src="vendor/js/script.js?v=1.2"></script>
 </body>
 </html>
