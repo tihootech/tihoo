@@ -24,7 +24,7 @@
     <link href="vendor/css/line-awesome.min.css" rel="stylesheet">
     <link href="vendor/css/jquery.pagepiling.css" rel="stylesheet">
     <link href="vendor/css/model-window.css" rel="stylesheet">
-    <link href="vendor/css/style.css" rel="stylesheet">
+    <link href="vendor/css/style.css?v=1.1" rel="stylesheet">
 </head>
 
 <body data-spy="scroll" data-target=".navbar" data-offset="90">
