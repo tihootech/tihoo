@@ -16,13 +16,13 @@
                         <i class="fas fa-quote-left"></i>
                     </div>
                     <div class="description">
-                        <p class="text-grey paragraph">{{$member->quote}}</p>
+                        <p class="text-grey main-font paragraph">{{$member->quote}}</p>
                     </div>
                     <div class="testimonial-img mt-4">
                         <img src="{{asset($member->avatar)}}" alt="{{$member->name}}">
                     </div>
                     <div class="testimonial-tittle mt-3 mb-3">
-                        <h3 class="mb-0 text-grey alt-font">{{$member->name}}</h3>
+                        <h3 class="mb-0 main-font text-grey alt-font">{{$member->name}}</h3>
                     </div>
                 </div>
             @endforeach

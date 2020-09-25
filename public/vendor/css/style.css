@@ -37,7 +37,7 @@
 }
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
 
-.main-font{font-family: 'Dirooz', 'Roboto', sans-serif;}
+.main-font{font-family: 'Dirooz', 'Roboto', sans-serif !important;}
 .alt-font{font-family: 'Roboto', sans-serif;}
 
 /* ===================================
